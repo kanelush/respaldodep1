@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="google-site-verification" content="lVud0uH7p79hWe42vOjXVM_UR3qKxvL-zHR1t-nwSR8" />
+    <meta name="description" content="Servicios de Tecnología y Marketing para negocios que busquen digitalizarse | Chillin Chile ®">
+    <meta name="keywords" content="Chile, Marketing, Marketing Digital, Digital, Tecnología, Negocios, Pymes, Empresas, Online">
+    <meta name="thumbnail" content="{% static 'content/logo.svg' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="shortcut icon" href="{% static 'content/logo.svg' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-69294MSMB1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-69294MSMB1');
+  </script>
+</head>
+<style>
+.navbar a.navbar-item:active {
+  background-color:#b4dcff;
+}
+
+.marg {
+   margin: 42px;	
+    }
+.pad {
+   padding-top:42px;
+   padding-bottom: 42px;
+}
+
+@media only screen and (max-width: 600px) {
+  .inicio {
+    margin: 10px;
+    width: 100%;
+  }
+}
+    
+</style>
+<body>
+  <section class="section">
+    <nav class="navbar cool is-fixed-top is-active" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% url 'frontpage' %}">
+          <img class="lol" src="{% static 'content/logo.svg' %}" width="80" height="80">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        
+    
+        <div class="navbar-end">
+          <a href="{% url 'frontpage' %}" class="navbar-item">
+              Inicio
+            </a>
+          <a href="{% url 'hacemos' %}" class="navbar-item">
+              Qué Hacemos
+            </a>    
+          <a href="{% url 'contact' %}" class="navbar-item">
+              Contacto
+            </a>
+          
+        </div>
+      </div>
+  
+    </nav>
+  </section>
+    {% block content %}
+    {% endblock %}
+    <br>
+    <br>
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Chillin Chile</strong> by <a href="https://chillin.cl">kanelush</a>. The source code is licensed
+       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+   </div>
+  </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+</body>
+</html>

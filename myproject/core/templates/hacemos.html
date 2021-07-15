@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Chillin Marketing Tech @Chile {% endblock %}
+
+{% block content %}
+<h1 class="title is-1 marg">Qué Hacemos?</h1>
+<h1 class="subtitle marg">Marketing para Ecommerce</h1>
+{% for c in blog %}
+<div class="content marg">
+	<h1>{{ c.topic }}</h1>
+	<p>{{ c.description }} </h1>
+</div>
+{% endfor %}
+{% endblock %}

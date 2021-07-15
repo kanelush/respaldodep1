@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="thumbnail" content="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+  <section class="section">
+    <nav class="navbar cool is-fixed-top is-active" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% url 'frontpage' %}">
+          <img class="lol" src="{% static 'content/trebol.png' %}" width="80" height="80">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        
+    
+        <div class="navbar-end">
+          <a href="{% url 'frontpage' %}" class="navbar-item">
+              Inicio
+            </a>
+          <a href="{% url 'hacemos' %}" class="navbar-item">
+              Qué Hacemos
+            </a>    
+          <a href="{% url 'contact' %}" class="navbar-item">
+              Contacto
+            </a>
+          
+        </div>
+      </div>
+  
+    </nav>
+  </section>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Crypton Chile</strong> by <a href="https://chillin.cl">kanelush</a>. The source code is licensed
+       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+   </div>
+  </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+</body>
+</html>

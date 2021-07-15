@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Chillin Marketing Tech @Chile {% endblock %}
+
+{% block content %}
+
+
+<style>
+.inicio {
+    background-image: url("{% static 'content/bg3.png' %}");
+    background-color: white;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    max-width: 100%;
+    width: 100%;
+    height: auto !important;
+ 
+  
+}
+
+.mid {
+  background-image: url("{% static 'content/bg4.png' %}");
+  background-color: white;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  max-width: 100%;
+}
+
+</style>
+
+<section class='hero is-fullheight-with-navbar inicio' style='width:100%;' border='0' alt='Null'>
+ 
+</section>
+<section class='hero is-fullheight mid'>
+ <div class="container">
+   <h1 class="title is-1 pad has-text-centered">Nuestros Servicios</h1>
+   <div class="container"></div>
+   <div class="columns">
+    {% for c in service %}
+    <div class="column is-one-quarter">
+      <div class="card">
+        <div class="card-image">
+          <!-- <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure> -->
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <!-- <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="media-content">
+              <p class="title is-4">{{ c.name }}</p>
+              
+            </div>
+          </div>
+      
+          <div class="content">
+            {{ c.description }}
+            <a href="#">#css</a> <a href="#">#responsive</a>
+            <br>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+ </div>
+</section>
+
+<br>
+{% endblock %}
